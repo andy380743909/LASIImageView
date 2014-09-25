@@ -28,6 +28,7 @@
 		410392B617D45FE4006F6AB7 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 410392B517D45FE4006F6AB7 /* libz.1.2.5.dylib */; };
 		410392B917D4600E006F6AB7 /* LASIImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 410392B817D4600E006F6AB7 /* LASIImageView.m */; };
 		4126B04017D47540004FD6EF /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4126B03F17D47540004FD6EF /* ViewController.xib */; };
+		D200078219D29327007E9B8D /* LProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = D200078019D29327007E9B8D /* LProgressView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,8 @@
 		410392B717D4600E006F6AB7 /* LASIImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LASIImageView.h; sourceTree = "<group>"; };
 		410392B817D4600E006F6AB7 /* LASIImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LASIImageView.m; sourceTree = "<group>"; };
 		4126B03F17D47540004FD6EF /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		D200078019D29327007E9B8D /* LProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LProgressView.m; sourceTree = "<group>"; };
+		D200078119D29327007E9B8D /* LProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LProgressView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +167,8 @@
 		4103928717D45E80006F6AB7 /* LASIImageView */ = {
 			isa = PBXGroup;
 			children = (
+				D200078119D29327007E9B8D /* LProgressView.h */,
+				D200078019D29327007E9B8D /* LProgressView.m */,
 				410392B717D4600E006F6AB7 /* LASIImageView.h */,
 				410392B817D4600E006F6AB7 /* LASIImageView.m */,
 			);
@@ -291,6 +296,7 @@
 				4103928B17D45E80006F6AB7 /* AppDelegate.m in Sources */,
 				4103928C17D45E80006F6AB7 /* ViewController.m in Sources */,
 				410392A617D45F59006F6AB7 /* ASIAuthenticationDialog.m in Sources */,
+				D200078219D29327007E9B8D /* LProgressView.m in Sources */,
 				410392A717D45F59006F6AB7 /* ASIDataCompressor.m in Sources */,
 				410392A817D45F59006F6AB7 /* ASIDataDecompressor.m in Sources */,
 				410392A917D45F59006F6AB7 /* ASIDownloadCache.m in Sources */,
