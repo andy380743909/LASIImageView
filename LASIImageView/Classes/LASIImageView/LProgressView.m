@@ -153,15 +153,34 @@
     CGRect allRect = self.bounds;
     
     UIFont *font = appearance.percentageTextFont;
+    NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                font, NSFontAttributeName,
+                                nil];
     NSString *text = [NSString stringWithFormat:@"%i%%", (int)(_progress * 100.0f)];
-    
-    CGSize textSize = [text sizeWithFont:font constrainedToSize:CGSizeMake(30000, 13)];
+    CGSize textSize = CGSizeZero;
+    if ([text respondsToSelector:@selector(boundingRectWithSize:options:attributes:context:)]) {
+        
+        CGRect rect = [text boundingRectWithSize:CGSizeMake(30000, 13)
+                                      options:NSStringDrawingUsesLineFragmentOrigin
+                                   attributes:attributes
+                                      context:nil];
+        rect.size.width = ceil(rect.size.width);
+        rect.size.height = ceil(rect.size.height);
+        textSize = rect.size;
+    }else{
+        textSize = [text sizeWithFont:font constrainedToSize:CGSizeMake(30000, 13)];
+    }
     
     float x = floorf(allRect.size.width / 2) + 3 + appearance.percentageTextOffset.x;
     float y = floorf(allRect.size.height / 2) - 6 + appearance.percentageTextOffset.y;
     
     CGContextSetFillColorWithColor(context, appearance.percentageTextColor.CGColor);
-    [text drawAtPoint:CGPointMake(x - textSize.width / 2.0, y) withFont:font];
+    
+    if ([text respondsToSelector:@selector(drawAtPoint:withAttributes:)]) {
+        [text drawAtPoint:CGPointMake(x - textSize.width / 2.0, y) withAttributes:attributes];
+    }else{
+        [text drawAtPoint:CGPointMake(x - textSize.width / 2.0, y) withFont:font];
+    }
 }
 
 
