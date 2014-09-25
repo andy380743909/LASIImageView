@@ -1,3 +1,7 @@
+Take LProgressView out from LASIImageView, so we can use the beautiful LProgressView.
+
+
+
 LASIImageView
 =============
 
